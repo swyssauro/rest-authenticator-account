@@ -12,5 +12,5 @@ module.exports = () => {
     applyRoutes(router)
     app.use(bodyParser()).use(router.routes()).use(cors()).use(router.allowedMethods())
     
-    app.listen(8080, () => console.log('online port.'));
+    app.listen(process.env.PORT || 8080, () => console.log('online port.'));
 }
