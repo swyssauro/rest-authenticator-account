@@ -10,7 +10,8 @@ const app = new Koa();
 module.exports = () => {
     
     applyRoutes(router)
-    app.use(cors()).use(bodyParser()).use(router.routes()).use(router.allowedMethods())
+    app.use(cors());
+    app.use(bodyParser()).use(router.routes()).use(router.allowedMethods())
     
     app.listen(process.env.PORT || 8080, () => console.log('online port.'));
 }
